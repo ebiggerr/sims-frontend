@@ -47,6 +47,20 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },*/
     ],
   },
+  {
+    title: 'ACCOUNT',
+    group: true,
+  },
+  {
+    title: /*'Layout'*/ 'Account Management',
+    icon: 'lock-outline',
+    children: [
+      {
+        title: /*'Stepper'*/'All Accounts',
+        link: '/pages/tables/accounts',
+      },
+    ],
+  },
 /*  {
     title: 'Forms',
     icon: 'edit-2-outline',
