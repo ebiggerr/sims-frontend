@@ -4,8 +4,6 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { AccountManagementRoutingModule, routedComponents } from './account-management-routing.module';
-import {FsIconComponent} from '../tables/tree-grid/tree-grid.component';
-
 
 @NgModule({
   imports: [
@@ -19,7 +17,6 @@ import {FsIconComponent} from '../tables/tree-grid/tree-grid.component';
   ],
   declarations: [
     ...routedComponents,
-    FsIconComponent,
   ],
 })
 export class AccountManagementModule { }
