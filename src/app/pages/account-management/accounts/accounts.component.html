@@ -1,0 +1,10 @@
+<nb-card>
+  <nb-card-header>
+    Account Listing
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (userRowSelect)="viewDetails($event)" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

@@ -52,12 +52,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: /*'Layout'*/ 'Account Management',
+    title: 'Account Management',
     icon: 'lock-outline',
     children: [
       {
-        title: /*'Stepper'*/'All Accounts',
-        link: '/pages/tables/accounts',
+        title: 'All Accounts',
+        link: '/pages/account-management/accounts',
       },
     ],
   },

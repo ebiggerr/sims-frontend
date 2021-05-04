@@ -69,6 +69,11 @@ const routes: Routes = [{
         .then(m => m.MiscellaneousModule),
     },
     {
+      path: 'account-management',
+      loadChildren: () => import('./account-management/account-management.module')
+        .then(m => m.AccountManagementModule),
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',
