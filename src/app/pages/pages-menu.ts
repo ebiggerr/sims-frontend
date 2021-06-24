@@ -4,6 +4,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Dashboard',
     icon: 'home-outline',
+    /*link: '/pages/home',*/
     link: '/pages/charts/d3',
     home: true,
   },
@@ -22,15 +23,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: /*'Stepper'*/'Listing',
-        link: '/pages/tables/inventory-listing',
+        /*link: '/pages/tables/inventory-listing',*/
+        link: '/pages/inventory/listing',
       },
       {
         title: 'Restock',
-        link: '/pages/forms/layouts',
+        link: '/pages/inventory/restock',
       },
       {
         title: 'Add New Item',
-        link: '/pages/forms/layoutsdasdas',
+        link: '/pages/inventory/new-item',
       }, /*
       {
         title: 'Infinite List',
