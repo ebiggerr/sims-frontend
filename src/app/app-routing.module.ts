@@ -5,10 +5,10 @@ import {
   NbLoginComponent,
   NbLogoutComponent,
   NbRegisterComponent,
-  // NbRequestPasswordComponent,
-  // NbResetPasswordComponent,
 } from '@nebular/auth';
 import { AuthGuardService } from './auth-guard.service';
+import {LoginComponent} from './pages/auth/login/login.component';
+import {RegisterComponent} from './pages/auth/register/register.component';
 
 export const routes: Routes = [
   {
@@ -23,29 +23,26 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: NbLoginComponent,
+        component: LoginComponent,
       },
       {
         path: 'login',
-        component: NbLoginComponent,
+        component: LoginComponent,
       },
       {
         path: 'register',
-        component: NbRegisterComponent,
+        component: RegisterComponent,
       },
       {
         path: 'logout',
         component: NbLogoutComponent,
       },
-      /*{
-        path: 'request-password',
-        component: NbRequestPasswordComponent,
-      },
-      {
-        path: 'reset-password',
-        component: NbResetPasswordComponent,
-      },*/
     ],
+  },
+  {
+    path: 'auth1',
+    loadChildren: () => import('./pages/auth/auth.module')
+      .then(m => m.AuthModule),
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
