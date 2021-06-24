@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
-import {NbAuthService} from '@nebular/auth';
+import {NbAuthJWTToken, NbAuthService} from '@nebular/auth';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
   constructor( private authService: NbAuthService, private router: Router) {}
 
   canActivate() {
+    this.authService.onTokenChange()
+      .subscribe((token: NbAuthJWTToken) => {
+        if ( !token.isValid() ) {
+          // TODO update this implementation after completed developing
+          // this.router.navigate(['auth/login']);
+          return true;
+        }
+      });
     return true;
-    // TODO change the implementation, check localStorage for JWT token and navigate user depends on the result
-    /*return this.authService.isAuthenticated()
-      .pipe(
-        tap(authenticated => {
-          if (!authenticated) {
-            this.router.navigate(['auth/login']);
-          }
-        }),
-      );*/
   }
 }
