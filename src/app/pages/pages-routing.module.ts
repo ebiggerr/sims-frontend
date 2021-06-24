@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+/*import {HomeComponent} from './home/home.component';*/
 
 const routes: Routes = [{
   path: '',
@@ -12,12 +13,16 @@ const routes: Routes = [{
   children: [
     {
       path: 'dashboard',
-      component: ECommerceComponent,
+      component: DashboardComponent,
     },
     {
       path: 'iot-dashboard',
       component: DashboardComponent,
     },
+/*    {
+      path: 'home',
+      component: HomeComponent,
+    },*/
     {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
@@ -74,8 +79,13 @@ const routes: Routes = [{
         .then(m => m.AccountManagementModule),
     },
     {
+      path: 'inventory',
+      loadChildren: () => import('./inventory/inventory.module')
+        .then(m => m.InventoryModule),
+    },
+    {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'charts/d3',
       pathMatch: 'full',
     },
     {
